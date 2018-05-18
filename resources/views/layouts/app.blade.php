@@ -35,9 +35,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li><a class="nav-link" href="{{ url('kategori') }}">Kategori</a></li>
-                    
                         <li><a class="nav-link" href="{{ url('user') }}">User</a></li>
                         <li><a class="nav-link" href="{{ url('pengeluaran') }}">Pengeluaran</a></li>
+
+                        <li><a class="nav-link" href="{{ url('category') }}">Category</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

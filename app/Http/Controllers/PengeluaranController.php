@@ -133,5 +133,6 @@ class PengeluaranController extends Controller
 			$Users[$user->id] = $user->name;
 		}
 		return $Users;
-	}
+    }
+
 }

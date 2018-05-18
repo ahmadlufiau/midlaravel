@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+	<div class="row col-md-12" style="padding-bottom:12px">
+		<a href="{{ url('pengeluaran/create') }}" class="btn btn-info">Tambah Pengeluaran</a>
+	</div>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">

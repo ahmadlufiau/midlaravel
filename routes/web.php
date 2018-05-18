@@ -16,8 +16,13 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Cara 1
 Route::resource('kategori', 'CategoryController');
 Route::resource('user', 'UserController');
 Route::resource('pengeluaran', 'PengeluaranController');
+
+// Cara 2
+Route::resource('category', 'Category2Controller');
+Route::resource('category.spending', 'SpendingController');
