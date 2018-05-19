@@ -36,6 +36,7 @@
                     <ul class="navbar-nav mr-auto">
                         @if(Auth::user())
                         <li><a class="nav-link" href="{{ url('category') }}">Category</a></li>
+                        <li><a class="nav-link" href="{{ url('kategori') }}">Kategori</a></li>
                         @endif
                     </ul>
 

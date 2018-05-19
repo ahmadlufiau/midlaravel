@@ -24,7 +24,7 @@ class CategorySpendingTableSeeder extends Seeder
         }
         
         // Generate dummy spending
-        $jml_spending = 20;
+        $jml_spending = 200;
         for ($i = 1; $i <= $jml_spending; $i++) {
             $spending               = new Spending();
             $spending->tanggal      = $faker->date($format = 'Y-m-d', $max = 'now');

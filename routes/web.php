@@ -18,6 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Versi Bahasa Inggris
+// Versi Inggris
 Route::resource('category', 'Category2Controller');
 Route::resource('category.spending', 'SpendingController');
+
+// Versi Indonesia
+Route::resource('kategori','KategoriController');
+Route::resource('kategori.pengeluaran', 'PengeluaranController');

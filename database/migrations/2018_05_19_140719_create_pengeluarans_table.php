@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSpendingsTable extends Migration
+class CreatePengeluaransTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateSpendingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('spendings', function (Blueprint $table) {
+        Schema::create('pengeluaran', function (Blueprint $table) {
             $table->increments('id');
             $table->date('tanggal');
             $table->string('nama', 50);
             $table->integer('jumlah');
-            $table->integer('category_id')->unsigned();
+            $table->integer('kategori_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('kategori_id')->references('id')->on('kategori')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
@@ -34,6 +34,6 @@ class CreateSpendingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spendings');
+        Schema::dropIfExists('pengeluaran');
     }
 }
