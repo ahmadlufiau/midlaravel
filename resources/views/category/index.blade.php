@@ -38,7 +38,7 @@
                                         <form action="{{ route('category.destroy', $category->id) }}" method="post">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
-                                        <a href="category/{{ $category->id }}/spending" class=" btn btn-warning">Lihat Pengeluaran</a>
+                                        <a href="category/{{ $category->id }}/spending" class=" btn btn-warning">View Spending</a>
                                         <a class="btn btn-info" href="{{ route('category.edit',$category->id) }}">Edit</a>
                                         <button type="submit"  class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')">Delete</button>
                                     </form>

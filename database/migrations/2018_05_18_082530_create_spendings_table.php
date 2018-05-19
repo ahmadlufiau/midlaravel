@@ -16,12 +16,14 @@ class CreateSpendingsTable extends Migration
         Schema::create('spendings', function (Blueprint $table) {
             $table->increments('id');
             $table->date('tanggal');
-            $table->string('nama');
-            $table->string('jumlah');
+            $table->string('nama', 50);
+            $table->integer('jumlah');
             $table->integer('category_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

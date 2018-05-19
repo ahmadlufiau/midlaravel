@@ -2,12 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Category;
 use App\Spending;
 use Illuminate\Http\Request;
 
 class SpendingController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -47,6 +59,7 @@ class SpendingController extends Controller
         $data->nama = $request->nama;
         $data->jumlah = $request->jumlah;
         $data->category_id = $category->id;
+        $data->user_id = Auth::user()->id;
 		$data->save();
         return redirect()->route ('category.spending.index', $category);
     }
@@ -96,6 +109,7 @@ class SpendingController extends Controller
         $data->nama = $request->nama;
         $data->jumlah = $request->jumlah;
         $data->category_id = $category->id;
+        $data->user_id = Auth::user()->id;
 		$data->save();
         return redirect()->route ('category.spending.index', $category);
     }
